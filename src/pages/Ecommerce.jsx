@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsCurrencyDollar } from 'react-icons/bs';
-import { GoPrimitiveDot } from 'react-icons/go';
+import { GoDotFill } from 'react-icons/go';
 import { Stacked, Pie, Button, SparkLine } from '../components'
 import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy.js'
 import { useStateContext } from '../contexts/ContextProvider';
@@ -44,12 +44,44 @@ const Ecommerce = () => {
                 <span className="text-lg font-semibold">
                   {item.amount}
                 </span>
+                <span className={`text-sm text-${item.pcColor} ml-2`}>
+                  {item.percentage}
+                </span>
               </p>
+              <p className="text-sm text-gray-400 mt-1">{item.title}</p>
             </div>
           ))} 
 
         </div>
 
+      </div>
+
+      <div className="flex gap-10 flex-wrap justify-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
+          <div className="flex justify-between">
+            <p className="font-semibold text-xl">Revenue Updates</p>
+            <div className="flex items-center gap-4">
+              <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
+                <span><GoDotFill /></span>
+                <span>Expense</span>
+              </p>
+              <p className="flex items-center gap-2 text-green-600 hover:drop-shadow-xl">
+                <span><GoDotFill /></span>
+                <span>Budget</span>
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 flex gap-10 flex-wrap justify-center">
+            <div className="border-r-1 border-color m-4 pr-10">
+              <div>
+                <p>
+                  <span className="text-xl font-semibold">$93,483</span>
+                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">23%</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
